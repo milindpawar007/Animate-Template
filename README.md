@@ -16,6 +16,27 @@ Enter [Creative Tim and their free Tailwind starter kit](https://www.creative-ti
 Lessons? - Don’t reinvent the Wheel! Build around it!! :rocket:
 
 
+##How do you load third-party script efficiently?
+If a third-party script is slowing down your page load, you have several options to improve performance:
+
+Load the script using the async or defer attribute to avoid blocking document parsing.
+
+Consider self-hosting the script if the third-party server is slow.
+
+Consider removing the script if it doesn't add clear value to your site.
+
+Consider Resource Hints like <link rel=preconnect> or <link rel=dns-prefetch> to perform a DNS lookup for domains hosting third-party scripts.
+
+Use async or defer
+JavaScript execution is parser blocking. This means when the browser encounters a script it must pause DOM construction, hand this over to the JavaScript engine and allow script execution before proceeding with DOM construction.
+
+The async and defer attributes change this behavior.
+
+With async, the browser downloads the script asynchronously while it continues to parse the HTML document. When the script finishes downloading, parsing is blocked while the script executes.
+
+With defer, the browser downloads the script asynchronously while it continues to parse the HTML document. The script doesn't run until the parsing is complete.
+<img src="https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/loading-third-party-javascript/images/image_13.png"></img>
+
 ## `WHAT` is this project `ABOUT`? :clipboard:
 This project demonstrates the ideas behind creating **Reuseable UI Components** which can potentially be hooked up to a backend webservice for dynamically generating/displaying the information in the Components
 
